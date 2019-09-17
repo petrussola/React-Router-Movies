@@ -2,7 +2,8 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import MovieCard from './MovieCard';
 
-const Movie = (props) => {
+const Movie = props => {
+  const {addToSaveList} = props;
   const [movie, setMovie] = useState({stars: []});
  
   useEffect(() => {
@@ -33,7 +34,7 @@ const Movie = (props) => {
   return (
     <div className="save-wrapper">
       <MovieCard movieData={movie} />
-      <div className="save-button">Save</div>
+      <div className="save-button" onClick={() => addToSaveList(movie) }>Save</div>
     </div>
   );
 }
