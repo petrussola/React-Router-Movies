@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, NavLink } from "react-router-dom";
 
 const SavedList = props => {
   debugger;
@@ -8,9 +8,9 @@ const SavedList = props => {
       <h3>Saved Movies:</h3>
       {props.list.map(movie => (
         // <span className="saved-movie">{movie.title}</span>
-        <Link to={`/movies/${movie.id}`} className="saved-movie">
+        <NavLink activeClassName='saved-active' to={`/movies/${movie.id}`} className="saved-movie">
           {movie.title}
-        </Link>
+        </NavLink>
       ))}
       <Link to="/">
         <div className="home-button">Home</div>
